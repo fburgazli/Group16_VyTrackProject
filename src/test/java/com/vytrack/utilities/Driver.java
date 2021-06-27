@@ -33,7 +33,7 @@ public class Driver {
             //to open specific type of browser/driver
 
             switch (browserType){
-                case "crhome":
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();

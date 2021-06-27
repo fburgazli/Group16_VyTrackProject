@@ -16,7 +16,7 @@ public LibraryLoginPageVytrack(){
     public WebElement inputPassword;
     @FindBy(id="_submit")
     public WebElement loginBtn;
-    @FindBy(xpath="//span[@class='title title-level-1'][1]")
+    @FindBy(xpath="//span[@class='title title-level-1']")
     public WebElement fleetBtn;
     @FindBy(xpath = "//div[@id='container']")
     public WebElement vehiclesBtn;
