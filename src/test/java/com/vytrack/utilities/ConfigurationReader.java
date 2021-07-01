@@ -25,7 +25,6 @@ public class ConfigurationReader {
     }
 
     //Use the above created logic to create a re-usable method
-
     public static String getProperty(String keyword){
         return  properties.getProperty(keyword);
     }
