@@ -15,47 +15,42 @@ import java.util.concurrent.TimeUnit;
 
 public class VyTrackUtils {
 
-        public static void loginToVyTrack(WebDriver driver) {
-            driver.findElement(By.name("_username")).sendKeys(ConfigurationReader.getProperty("username"));
-            driver.findElement(By.name("_password")).sendKeys(ConfigurationReader.getProperty("password") + Keys.ENTER);
+        public static void loginToVyTrack() {
+            Driver.getDriver().findElement(By.name("_username")).sendKeys(ConfigurationReader.getProperty("username"));
+            Driver.getDriver().findElement(By.name("_password")).sendKeys(ConfigurationReader.getProperty("password") + Keys.ENTER);
             //driver.findElement(By.id("_submit")).click();
-            String expectedTitle = "Dashboard";
-            BrowserUtils.sleep(3);
-            Assert.assertEquals(driver.getTitle(), expectedTitle);
+
         }
 
-        public static void vehicleUnderFleetTest(WebDriver driver){
-            WebElement fleetButton = driver.findElement(By.xpath("(//span[@class='title title-level-1'])[1]"));
-            Actions action = new Actions(driver);
+        public static void vehicleUnderFleetTest(){
+            WebElement fleetButton = Driver.getDriver().findElement(By.xpath("(//span[@class='title title-level-1'])[1]"));
+            Actions action = new Actions(Driver.getDriver());
             action.moveToElement(fleetButton).perform();
-            driver.findElement(By.xpath("//span[text()='Vehicles']/..")).click();
+            Driver.getDriver().findElement(By.xpath("//span[text()='Vehicles']/..")).click();
 
-            String expectedTitle ="Car - Entities - System - Car - Entities - System";
-            BrowserUtils.sleep(3);
-            Assert.assertEquals(driver.getTitle(),expectedTitle);
         }
 
-        public static void generalCarInfoTest(WebDriver driver){
-            driver.findElement(By.xpath("//tr[@class='grid-row row-click-action']")).click();
+        public static void generalCarInfoTest(){
+            Driver.getDriver().findElement(By.xpath("//tr[@class='grid-row row-click-action']")).click();
             String expectedHeader = "General Information";
-            String actualHeader = driver.findElement(By.xpath("//span[.='General Information']")).getText();
+            String actualHeader = Driver.getDriver().findElement(By.xpath("//span[.='General Information']")).getText();
             Assert.assertEquals(actualHeader, expectedHeader);
         }
 
         public static void addEventTest(WebDriver driver){
 
-            driver.findElement(By.xpath("//a[@data-id='127']")).click();
+            Driver.getDriver().findElement(By.xpath("//a[@data-id='127']")).click();
             Faker faker = new Faker();
-            driver.findElement(By.xpath("//input[contains(@id,'form_title')]")).sendKeys(faker.lorem().fixedString(10));
+            Driver.getDriver().findElement(By.xpath("//input[contains(@id,'form_title')]")).sendKeys(faker.lorem().fixedString(10));
 
-            WebElement iframe = driver.findElement(By.xpath("//iframe[contains(@id,'form_description')]"));
-            driver.switchTo().frame(iframe);
-            driver.findElement(By.id("tinymce")).sendKeys(faker.lorem().sentence(30));
-            driver.switchTo().parentFrame();
-            driver.findElement(By.xpath("//input[contains(@id,'organizerDisplayName')]")).sendKeys(faker.name().fullName());
+            WebElement iframe = Driver.getDriver().findElement(By.xpath("//iframe[contains(@id,'form_description')]"));
+            Driver.getDriver().switchTo().frame(iframe);
+            Driver.getDriver().findElement(By.id("tinymce")).sendKeys(faker.lorem().sentence(30));
+            Driver.getDriver().switchTo().parentFrame();
+            Driver.getDriver().findElement(By.xpath("//input[contains(@id,'organizerDisplayName')]")).sendKeys(faker.name().fullName());
 
-            driver.findElement(By.xpath("//input[contains(@id,'organizerEmail')]")).sendKeys(faker.internet().emailAddress());
-            driver.findElement(By.xpath("//button[.='Save']")).click();
+            Driver.getDriver().findElement(By.xpath("//input[contains(@id,'organizerEmail')]")).sendKeys(faker.internet().emailAddress());
+            Driver.getDriver().findElement(By.xpath("//button[.='Save']")).click();
 
             BrowserUtils.sleep(5);
 
