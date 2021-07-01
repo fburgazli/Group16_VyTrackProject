@@ -3,7 +3,7 @@ package com.vytrack.tests;
 import com.vytrack.utilities.Driver;
 import org.testng.annotations.Test;
 
-public class AC1ClickExportGridDropdown {
+public class AC1_ClickExportGridDropdownTest {
 /**
  Step 1- I  Go to VyTrack login page https://qa3.vytrack.com/user/login
  Step 2- I Login as an Truck Driver, Enter correct user name

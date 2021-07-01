@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class GridSettingsButtonTest {
+public class AC8_GridSettingsButtonTest {
 
     @Test
     public void grid_settings_button_test(){
