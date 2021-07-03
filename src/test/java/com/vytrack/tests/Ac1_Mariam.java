@@ -28,8 +28,15 @@ public class Ac1_Mariam {
     @FindBy(xpath = "//span[@class='title title-level-2'][1]")
     public WebElement vehicleBtn;
 
-    @FindBy(className = "fa-repeat")
+    @FindBy(xpath = "//h1[.='Cars']")
+    public WebElement carsText;
+
+
+    @FindBy(xpath = "(//a[@title='Refresh'])[1]")
     public WebElement refreshBtn;
+
+    @FindBy(xpath = "(//div[@class='loader-mask shown'])[1]")
+    public WebElement loaderMask;
 
 
 
