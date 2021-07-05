@@ -1,18 +1,16 @@
-package com.vytrack.mariamPages;
+package com.vytrack.tests;
 
-import com.vytrack.tests.Ac1_Mariam;
+import com.vytrack.mariamPages.AC1_Mariam_VyTruck;
 import com.vytrack.utilities.BrowserUtils;
+import com.vytrack.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.vytrack.utilities.Driver;
 
-
-
-public class mariam_VyTruck_login {
+public class Mariam_VyTruckTest {
     @Test
     public void login_test() {
         Driver.getDriver().get("https://qa3.vytrack.com/user/login");
-        Ac1_Mariam vtPageLogin = new Ac1_Mariam();
+        AC1_Mariam_VyTruck vtPageLogin = new AC1_Mariam_VyTruck();
         vtPageLogin.Username.sendKeys("user47");
         BrowserUtils.sleep(2);
         vtPageLogin.Password.sendKeys("UserUser123");
@@ -25,7 +23,7 @@ public class mariam_VyTruck_login {
         BrowserUtils.sleep(2);
 
         String expectedCarText = "Cars";
-        Assert.assertEquals(vtPageLogin.carsText.getText(),expectedCarText);
+        Assert.assertEquals(vtPageLogin.carsText.getText(), expectedCarText);
         BrowserUtils.sleep(2);
 
 
@@ -37,11 +35,5 @@ public class mariam_VyTruck_login {
         BrowserUtils.sleep(1);
 
 
-
-
-
-
-
     }
-}
-
+    }
