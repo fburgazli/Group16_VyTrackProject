@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 
-public class FleetPage {
-    public FleetPage(){
+public class DashBoardPage {
+    public DashBoardPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -19,9 +19,9 @@ public class FleetPage {
     @FindBy(xpath = "//span[.='Vehicles']/..")
     public WebElement vehiclesButton;
 
+
     public void actions_clicks(WebElement element){
         Actions actions = new Actions(Driver.getDriver());
-
         actions.moveToElement(fleetTabButton).perform();
         element.click();
     }

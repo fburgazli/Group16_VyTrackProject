@@ -1,37 +1,29 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.FleetManagementPage;
 import com.vytrack.pages.LoginPage;
-import com.vytrack.utilities.BrowserUtils;
-import com.vytrack.utilities.ConfigurationReader;
-import com.vytrack.utilities.Driver;
-import com.vytrack.utilities.VyTrackUtils;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
-
-import java.util.concurrent.TimeUnit;
 
 public class VyTrackLogIn {
 
     @Test
     public static void positiveLogInUser45() {
-        VyTrackUtils.getEnvironment();
-        VyTrackUtils.loginTruckDriver();
-        VyTrackUtils.tearDown();
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginMethod("user", "password");
+
     }
 
     @Test
     public static void positiveLogInStoreManager81() {
-        VyTrackUtils.getEnvironment();
-        VyTrackUtils.loginStoreManager();
-        VyTrackUtils.tearDown();
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginMethod("userStoreManager", "password");
+
     }
 
     @Test
     public static void positiveLogInSalesManager146(){
-        VyTrackUtils.getEnvironment();
-        VyTrackUtils.loginSalesManager();
-        VyTrackUtils.tearDown();
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginMethod("userSalesManager", "password");
+
     }
 
 }
