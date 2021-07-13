@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+<<<<<<< HEAD
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -26,4 +27,19 @@ public class LoginPage {
         inputPassword.sendKeys(password);
         loginButton.click();
     }
+=======
+    public LoginPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+    @FindBy(xpath = "//input[@id='prependedInput']")
+    public WebElement inputUserName;
+
+    @FindBy(xpath = "//input[@id='prependedInput2']")
+    public WebElement inputPassword;
+
+    @FindBy(id = "_submit")
+    public WebElement logInButton;
+
+>>>>>>> origin/LoginTest01
 }
