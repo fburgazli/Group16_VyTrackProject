@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class MariamLoginPage {
-    public MariamLoginPage(){
+public class MariamRefreshBtn {
+    public MariamRefreshBtn(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(id = "prependedInput")

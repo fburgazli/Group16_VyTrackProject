@@ -1,6 +1,6 @@
 package com.vytrack.tests;
 
-import com.vytrack.mariamPages.MariamLoginPage;
+import com.vytrack.mariamPages.MariamRefreshBtn;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
@@ -8,8 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class MariamVyTruckTest {
-    MariamLoginPage login = new MariamLoginPage();
+public class MariamRefreshBtnTest {
+    MariamRefreshBtn login = new MariamRefreshBtn();
     @Test
     public void login_test() {
 
