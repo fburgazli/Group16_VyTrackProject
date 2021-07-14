@@ -1,18 +1,14 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.ExportGridDropDowmLeft;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.vytrack.utilities.Driver;
 
 
-
-
-    public class ExportGridDropDownObjectTest {
+public class ExportGridDropDownObjectTest {
         @Test
         public void ExportGridDropDownLeftTest(){
             Driver.getDriver().get(ConfigurationReader.getProperty("env"));

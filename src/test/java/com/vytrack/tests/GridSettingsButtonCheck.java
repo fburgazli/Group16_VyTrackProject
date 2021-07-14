@@ -1,6 +1,6 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.CarsPage;
+import com.vytrack.pages.FleetPage;
 import com.vytrack.pages.DashBoardPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
@@ -21,7 +21,7 @@ public class GridSettingsButtonCheck {
         LoginPage loginPage = new LoginPage();
         loginPage.loginMethod("user", "password");
         DashBoardPage fleetLibrary = new DashBoardPage();
-        CarsPage carsPage = new CarsPage();
+        FleetPage fleetPage = new FleetPage();
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Actions actions = new Actions(Driver.getDriver());
@@ -29,7 +29,7 @@ public class GridSettingsButtonCheck {
         actions.moveToElement(fleetLibrary.vehiclesButton).click().perform();
         BrowserUtils.sleep(1);
 
-        Assert.assertTrue(carsPage.gridSetOnRightOfReset.isDisplayed());
+        Assert.assertTrue(fleetPage.gridSetOnRightOfReset.isDisplayed());
 
     }
 

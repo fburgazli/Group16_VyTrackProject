@@ -1,6 +1,5 @@
 package com.vytrack.pages;
 
-import com.vytrack.tests.LoginTest01;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.WebElement;

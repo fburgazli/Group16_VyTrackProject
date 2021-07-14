@@ -2,7 +2,7 @@ package com.vytrack.tests;
 
 import com.vytrack.pages.DashBoardPage;
 import com.vytrack.pages.LoginPage;
-import com.vytrack.pages.CarsPage;
+import com.vytrack.pages.FleetPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +15,7 @@ public class ObjectForVyTrack {
 
         LoginPage login = new LoginPage();
         DashBoardPage dashBoardPage = new DashBoardPage();
-        CarsPage carsPage = new CarsPage();
+        FleetPage fleetPage = new FleetPage();
         Actions act = new Actions(Driver.getDriver());
 
         login.loginMethod("username", "password");
@@ -23,10 +23,10 @@ public class ObjectForVyTrack {
         BrowserUtils.sleep(3);
 
         dashBoardPage.vehiclesButton.click();
-        carsPage.gridSettingsBtn.click();
+        fleetPage.gridSettingsBtn.click();
 
 
-           Assert.assertTrue(carsPage.gridSettingsBtn.isDisplayed());
+           Assert.assertTrue(fleetPage.gridSettingsBtn.isDisplayed());
 
     }
 }
