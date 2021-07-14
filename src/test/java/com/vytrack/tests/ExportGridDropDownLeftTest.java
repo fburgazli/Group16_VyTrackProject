@@ -1,5 +1,7 @@
 package com.vytrack.tests;
 
+import com.vytrack.pages.FleetPage;
+import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
@@ -8,12 +10,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class ExportGridDropDownObjectTest {
+public class ExportGridDropDownLeftTest {
         @Test
         public void ExportGridDropDownLeftTest(){
             Driver.getDriver().get(ConfigurationReader.getProperty("env"));
             BrowserUtils.sleep(3);
-            ExportGridDropDowmLeft logIn=new ExportGridDropDowmLeft();
+            FleetPage logIn=new ExportGrid;
+            LoginPage loginPage=new LoginPage();
             logIn.inputUsername.sendKeys("user47");
             logIn.inputPassword.sendKeys("UserUser123");
             logIn.logInButton.click();
