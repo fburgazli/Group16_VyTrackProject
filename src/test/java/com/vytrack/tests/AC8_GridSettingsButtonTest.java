@@ -1,12 +1,10 @@
 package com.vytrack.tests;
 
-import com.vytrack.pages.FleetPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
