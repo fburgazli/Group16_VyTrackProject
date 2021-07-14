@@ -1,5 +1,6 @@
 package com.vytrack.tests;
 
+import com.vytrack.pages.DashBoardPage;
 import com.vytrack.pages.FleetPage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
@@ -12,21 +13,23 @@ import org.testng.annotations.Test;
 
 public class ExportGridDropDownLeftTest {
         @Test
-        public void ExportGridDropDownLeftTest(){
-            Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        public void ExportGridDropDownLeft(){
+            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
             BrowserUtils.sleep(3);
-            FleetPage logIn=new ExportGrid;
+            FleetPage fleetPage=new FleetPage();
             LoginPage loginPage=new LoginPage();
-            logIn.inputUsername.sendKeys("user47");
-            logIn.inputPassword.sendKeys("UserUser123");
-            logIn.logInButton.click();
+            DashBoardPage dashBoardPage=new DashBoardPage();
+            loginPage.inputUsername.sendKeys("user47");
+            loginPage.inputPassword.sendKeys("UserUser123");
+            loginPage.loginButton.click();
             Actions actions=new Actions(Driver.getDriver());
-            actions.moveToElement(logIn.fleet).perform();
-            actions.moveToElement(logIn.vehicles).click().perform();
+            actions.moveToElement(dashBoardPage.fleetTabButton).perform();
+            actions.moveToElement(dashBoardPage.vehiclesButton).click().perform();
             String expectedText="pull-left";
-            String actualText=logIn.exportGridbox.getAttribute("class");
+            String actualText=fleetPage.exportGridbox.getAttribute("class");
 
             Assert.assertTrue(actualText.contains(expectedText));
+
 
         }
     }
