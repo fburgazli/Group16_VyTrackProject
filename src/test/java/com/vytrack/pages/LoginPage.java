@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +21,13 @@ public class LoginPage {
     @FindBy(id = "_submit")
     public WebElement loginButton;
 
+    @FindBy(linkText="Invalid user name or password.")
+    public WebElement invalidEmailError;
+
     public void loginMethod(String username,String password){
-        Driver.getDriver().get("https://qa3.vytrack.com/user/login");
-        inputUsername.sendKeys(username);
-        inputPassword.sendKeys(password);
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        inputUsername.sendKeys(ConfigurationReader.getProperty(username));
+        inputPassword.sendKeys(ConfigurationReader.getProperty(password));
         loginButton.click();
     }
 
