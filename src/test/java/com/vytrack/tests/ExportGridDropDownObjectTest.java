@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class ExportGridDropDownLeftTest {
+public class ExportGridDropDownObjectTest {
         @Test
         public void ExportGridDropDownLeft(){
             Driver.getDriver().get(ConfigurationReader.getProperty("url"));
@@ -19,15 +19,12 @@ public class ExportGridDropDownLeftTest {
             FleetPage fleetPage=new FleetPage();
             LoginPage loginPage=new LoginPage();
             DashBoardPage dashBoardPage=new DashBoardPage();
-            loginPage.inputUsername.sendKeys("user47");
-            loginPage.inputPassword.sendKeys("UserUser123");
-            loginPage.loginButton.click();
+            loginPage.loginMethod("user","password");
             Actions actions=new Actions(Driver.getDriver());
             actions.moveToElement(dashBoardPage.fleetTabButton).perform();
             actions.moveToElement(dashBoardPage.vehiclesButton).click().perform();
             String expectedText="pull-left";
             String actualText=fleetPage.exportGridbox.getAttribute("class");
-
             Assert.assertTrue(actualText.contains(expectedText));
 
 
