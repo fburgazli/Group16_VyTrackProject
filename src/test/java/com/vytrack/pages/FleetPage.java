@@ -26,6 +26,11 @@ public class FleetPage {
     @FindBy(xpath = "(//a[@title='Refresh'])[1]")
     public WebElement refreshBtn;
 
+    @FindBy(xpath = "(//a[@title='Reset'])[1]")
+   // @FindBy(xpath = "//a[contains(@class;reset-action')]")
+    public WebElement resetBtn;
+
+
     @FindBy(xpath = "//a[@title='Grid Settings']/..//preceding::a[@title='Reset']")
     public WebElement gridSetOnRightOfReset;
 }
