@@ -19,6 +19,9 @@ public class DashBoardPage {
     @FindBy(xpath = "//span[.='Vehicles']/..")
     public WebElement vehiclesButton;
 
+    @FindBy(xpath = "//i[@class='fa-repeat']/..")
+    public WebElement refreshButton;
+
 
     public void actions_clicks(WebElement element){
         Actions actions = new Actions(Driver.getDriver());
